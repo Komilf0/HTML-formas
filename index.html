@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Ķīmijas Laboratorijas Uzskaites Sistēma</title>
+
+</head>
+<body>
+
+  <div id="form1" class="form-container">
+    <h1>Ko Tu vēlis darīt šodien</h1>
+    <p>Pekļūsti savas skolas laboratorijai vai aplūko publiski pieejamo informāciju un datus par laboratoriju.</p>
+    <button onclick="goToForm2()">Pieslēgties</button>
+    <button onclick="goToForm3()">Piekļūt publiskiem datiem</button>
+  </div>
+  
+  <div id="form2" class="form-container" style="display: none;">
+    <button onclick="goToForm1()">Atpakaļ uz sākumlapu</button>
+    <h1>Pieslēgties</h1>
+    <p>Ķīmijas laboratorija uzskaites sistēmai</p>
+    <form action="index.php" method="post">
+      <input type="text" id="username" name="username" placeholder="Lietotājvārds" required>
+      <input type="password" id="password" name="password" placeholder="Parole" required>
+      <button type="submit" onclick="goToForm3()">Pieslēgties</button>
+    </form>
+    <div>
+      <p>Neesi vēl reģistrēts?</p> <a href="#">Izveidot profilu</a>
+    </div>
+  </div>
+  
+  <div id="form3" style="display: none;">
+    <button onclick="goToForm1()">Atpakaļ uz sākumlapu</button>
+    <h1>Publiskā datubāze</h1>
+    <p>Šajā datubāzē Tu vari apskatīt pieejamās vielas un aprīkojumu.</p>
+    <input type="text" placeholder="Meklēt..."><br><br>
+    <button>Rādīt visu</button>
+    <button>Rādīt vielas</button>
+    <button>Rādīt aprīkojumu</button>
+  
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Nosaukums</th>
+        <th>Tips</th>
+        <th>Apakštips</th>
+        <th>Skaits</th>
+        <th>Svars</th>
+        <th>Komentāri</th>
+      </tr>
+      <tr>
+        <td>KLI042724</td>
+        <td>Katalizators</td>
+        <td>Aprikojums</td>
+        <td>Trauks</td>
+        <td>23</td>
+        <td></td>
+        <td>Daži komentāri</td>
+      </tr>
+      <tr>
+        <td>KL1042723</td>
+        <td>Birete</td>
+        <td>Aprīkojums</td>
+        <td>Trauks</td>
+        <td>20</td>
+        <td></td>
+        <td>Daži komentāri</td>
+      </tr>
+      <tr>
+        <td>KL1042742</td>
+        <td>HC</td>
+        <td>Viela</td>
+        <td>Skābe</td>
+        <td>19</td>
+        <td>40</td>
+        <td>Daži komentāri</td>
+      </tr>
+      <tr>
+        <td>KL1042724</td>
+        <td>Kolba</td>
+        <td>Aprikojums</td>
+        <td>Trauks</td>
+        <td>20</td>
+        <td></td>
+        <td>Daži komentāri</td>
+      </tr>
+      <tr>
+        <td>KL1042534</td>
+        <td>Fe</td>
+        <td>Viela</td>
+        <td>Metāls</td>
+        <td>48</td>
+        <td>10</td>
+        <td>Daži komentāri</td>
+      </tr>
+      <tr>
+        <td>KL1442721</td>
+        <td>Viela</td>
+        <td>Na</td>
+        <td>Metāls</td>
+        <td>20</td>
+        <td>20</td>
+        <td>Daži komentāri</td>
+      </tr>
+    </table>
+  </div>
+  
+  <button id="reportButton">Ziņot par kļūdu</button>
+  
+  <script>
+    function goToForm1() {
+      document.getElementById('form1').style.display = 'block';
+      document.getElementById('form2').style.display = 'none';
+      document.getElementById('form3').style.display = 'none';
+    }
+  
+    function goToForm2() {
+      document.getElementById('form1').style.display = 'none';
+      document.getElementById('form2').style.display = 'block';
+      document.getElementById('form3').style.display = 'none';
+    }
+  
+    function goToForm3() {
+      document.getElementById('form1').style.display = 'none';
+      document.getElementById('form2').style.display = 'none';
+      document.getElementById('form3').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
